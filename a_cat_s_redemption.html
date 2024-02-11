@@ -101,7 +101,7 @@ ROOM 4
 0,0,0,0,0,0,0,0,0,0,0,1w,1w,0,0,0
 1r,1r,1r,1r,1r,1r,1r,1r,1r,1r,1r,1w,1w,0,22,0
 1u,1u,1u,1u,1u,1u,1u,1u,1u,1u,1u,1w,1w,0,20,0
-1t,1t,1t,1t,1t,1t,1t,1t,1t,1t,1t,1w,1w,1j,21,0
+1t,1t,1t,1t,1t,1t,1t,1t,1t,1t,1t,1w,1w,0,21,0
 1v,1v,1v,1v,1v,1v,1v,1v,1v,1v,1v,1w,1w,0,0,0
 1s,1s,1s,1s,1s,1s,1s,1s,1s,1s,1s,1w,1w,0,0,0
 0,0,0,0,0,0,0,0,0,0,0,1w,1w,0,0,0
@@ -1339,6 +1339,7 @@ TIL 2e
 01111111
 11111111
 NAME house1
+WAL true
 
 TIL 2f
 10000000
@@ -1350,6 +1351,7 @@ TIL 2f
 11111110
 11111111
 NAME house2
+WAL true
 
 TIL 2g
 00111111
@@ -1361,6 +1363,7 @@ TIL 2g
 00110001
 00110001
 NAME house3
+WAL true
 
 TIL 2h
 11111100
@@ -1372,6 +1375,7 @@ TIL 2h
 11111100
 11111100
 NAME house4
+WAL true
 
 TIL 2i
 01000110
@@ -1383,6 +1387,7 @@ TIL 2i
 00011000
 00011000
 NAME deadtree
+WAL true
 
 SPR A
 00111100
@@ -1415,7 +1420,6 @@ SPR a
 00111100
 00100100
 NAME cat1
-DLG 0
 POS 6 12,5
 BLIP 1
 
@@ -1448,7 +1452,7 @@ SPR c
 11011001
 11111100
 10100100
-NAME hero
+NAME hero1
 DLG 0
 POS 4 1,8
 BGC *
@@ -1483,6 +1487,7 @@ SPR e
 00111100
 00100100
 NAME cat2
+DLG 5
 POS 8 5,6
 
 SPR f
@@ -1495,6 +1500,7 @@ SPR f
 00111100
 00100100
 NAME cat3
+DLG 6
 POS 8 11,11
 
 SPR h
@@ -1507,6 +1513,7 @@ SPR h
 00111100
 00100100
 NAME cat5
+DLG 8
 POS 8 11,6
 
 SPR i
@@ -1519,6 +1526,7 @@ SPR i
 00111100
 00100100
 NAME cat4
+DLG 7
 POS 8 2,10
 
 SPR j
@@ -1553,6 +1561,26 @@ SPR k
 00100100
 NAME human
 
+SPR l
+00111100
+00111100
+00111101
+11011001
+11111101
+11011011
+10111101
+00100100
+>
+00111100
+00111101
+00111101
+00011001
+11111111
+11011001
+11111100
+10100100
+NAME hero2
+
 ITM 0
 00111100
 00100100
@@ -1563,36 +1591,58 @@ ITM 0
 01111110
 00011000
 NAME herb
-DLG 1
-
-ITM 1
-00000000
-00111100
-00100100
-00111100
-00010000
-00011000
-00010000
-00011000
-NAME key
-DLG 2
-BLIP 2
 
 DLG 0
-Demon Lord, I am here to put and end to your ways!{pg}I am ending your evil reign and cursing you to learn the errors of your ways! {pg}{clr 0}{shk}MWAHAHAHAHA{/shk}{/clr}{pg}{clr 0}{shk}GO AHEAD AND TRY TO STOP ME!{/shk}{/clr}{pg}I curse you to become a cat for the rest of your days! Perhaps, in this form, you will find the good in your heart!{pg}{shk}{clr 3}CURSE YOU HERO! I WILL RETURNNNnnnn...{/clr}{/shk}{exit "5" 5 7 "fade_b"}
+Demon Lord, I am here to put an end to your ways!{pg}Your evil reign stops here and you shall be cursed to learn the error of your ways! {pg}{clr 0}{shk}MWAHAHAHAHA{/shk}{/clr}{pg}{clr 0}{shk}GO AHEAD AND TRY TO STOP ME!{/shk}{/clr}{pg}I curse you to become a cat for the rest of your days! Perhaps, in this form, you will find the good in your heart!{pg}{shk}{clr 3}CURSE YOU HERO! I WILL RETURNNNnnnn...{/clr}{/shk}{pg}{exit "5" 5 7 "fade_b"}{clr 3}Curses! My plans have been spoiled by the wretched hero!{/clr}{pg}{clr 3}Hmmmmm...{/clr}{pg}{clr 3}Perhaps it's not too late! Maybe if I do enough evil deeds, I'll regain my powers and be able to return myself to my original form!{/clr}{pg}{clr 3}...or should I heed the hero's words and change my ways?{/clr}{pg}{clr 3}NO MATTER! LET ME RETURN TO MY TOWER FIRST! ONLY THEN WILL I BE ABLE TO DO SOMETHING ABOUT MY FORM!{/clr}
 NAME hero dialog 1
-
-DLG 1
-
-NAME tea dialog
-
-DLG 2
-A key! {wvy}What does it open?{wvy}
-NAME key dialog
 
 DLG 3
 It's finally time to end the Demon Lord!{blip "8"}
 NAME exit narration 1
+
+DLG 4
+Oh, hello! Do you mind helping
+NAME cat dialog 1
+
+DLG 5
+"""
+{cycle
+  - ...
+  - ...
+  -  
+}
+"""
+NAME cat dialog 2
+
+DLG 6
+"""
+{cycle
+  - ...
+  - ...
+  -  
+}
+"""
+NAME cat dialog 3
+
+DLG 7
+"""
+{cycle
+  - ...
+  - ...
+  -  
+}
+"""
+NAME cat dialog 4
+
+DLG 8
+"""
+{cycle
+  - ...
+  - ...
+  -  
+}
+"""
+NAME cat dialog 5
 
 VAR a
 42
@@ -1677,7 +1727,7 @@ body {
 	margin:0px;
 	padding:0px;
 	overflow:hidden;
-	background:#ffffff;
+	background:#f5f5f5;
 }
 
 #game {
